@@ -48,5 +48,20 @@ public class No {
     public Object getData() {
 		return this.elemento;
 	}
+    /*INSERE UM NO ANTES DESSE NO*/
+	public void insertBefore(No no) {
+		this.previous.setNext(no);
+		no.setPrevious(this.previous);
+		no.setNext(this);
+		this.setPrevious(no);
+	}
+	/*INSERE UM NO DEPOIS DESSE NO*/
+	public void insertAfter(No no){
+		this.next.setPrevious(no);
+		no.setNext(this.next);
+		no.setPrevious(this);
+		this.setNext(no);
+		
+	}
 
 }

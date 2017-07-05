@@ -23,8 +23,7 @@ public class ListaEncadeada {
 		No novoNo = new No(elemento);
 		if (this.head == null) {
 			this.head = novoNo;
-			this.head.setNext(this.head);
-			this.tail = this.head;
+			this.tail = novoNo;
 		} else {
 			this.head.setPrevious(novoNo);
 			novoNo.setNext(this.head);

@@ -10,6 +10,18 @@ public class TestaListaEncadeada {
 		lista.append("5");
 		lista.append("6");
 		lista.addFirst("1");
+		
+		imprime(lista);
+		
+		System.out.println("===============================");
+		System.out.println("LISTA COM INSERT ANTES E DEPOIS");
+		System.out.println("===============================");
+		No iter = lista.getFirst();
+		for (int i = 0; i < 3; i++) {
+			iter = iter.next();
+		}
+		iter.insertBefore(new No("Antes do 4"));
+		iter.insertAfter(new No("Depois do 4"));
 		imprime(lista);
 	}
 
@@ -17,13 +29,8 @@ public class TestaListaEncadeada {
 		No iter = lista.getFirst();
 		while (iter != null) {
 			System.out.println("Valor: "+iter.getData());
-			if (iter.hasNext()) {
-				System.out.println("Valor P: "+iter.next().getData());
-			}
-			if (iter.hasPrevious()) {
-				System.out.println("Valor A: "+iter.previous().getData());
-			}
 			iter = iter.next();
+			System.out.println("----------");
 		}
 	}
 
