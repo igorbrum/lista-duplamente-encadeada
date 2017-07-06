@@ -61,7 +61,6 @@ public class No {
 		no.setNext(this.next);
 		no.setPrevious(this);
 		this.setNext(no);
-		
 	}
 
 }

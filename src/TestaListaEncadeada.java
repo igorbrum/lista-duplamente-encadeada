@@ -38,7 +38,7 @@ public class TestaListaEncadeada {
 	private static void imprimeContrario(ListaEncadeada lista){
 		No iter = lista.getLast();
 		while (iter != null) {
-			System.out.println(iter.getData());
+			System.out.println("Valor: "+iter.getData());
 			iter = iter.previous();
 		}
 	}
