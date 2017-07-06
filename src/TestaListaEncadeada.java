@@ -26,7 +26,13 @@ public class TestaListaEncadeada {
 		System.out.println("===============================");
 		System.out.println("LISTA AO CONTRARIO");
 		
-		imprimeContrario(lista);	
+		imprimeContrario(lista);
+		
+		System.out.println("===============================");
+		System.out.println("LISTA COM DELETE");
+		
+		lista.remove("3");
+		imprime(lista);
 	}
 	private static void imprime(ListaEncadeada lista) {
 		No iter = lista.getFirst();

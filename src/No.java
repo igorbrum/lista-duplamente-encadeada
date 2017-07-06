@@ -62,5 +62,10 @@ public class No {
 		no.setPrevious(this);
 		this.setNext(no);
 	}
+	/*REMOVE O NO*/
+	public void remove(){
+		this.previous().setNext(this.next());
+		this.next().setPrevious(this.previous());
+	}
 
 }
