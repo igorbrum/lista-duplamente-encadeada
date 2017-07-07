@@ -125,14 +125,15 @@ public class ListaEncadeada {
 	}
 	/*REMOVE O OBJETO DA LISTA*/
 	public void remove(Object elemento) {
-		if (this.hasObject(elemento)) {
+		//ERRO DE LOGICA
+		/*if (this.hasObject(elemento)) {
 			Iterador iter = this.getFirst();
 			while (iter.hasNext()) {
 				if (elemento != iter.next()) {
 					iter.remove();
 				}
 			}
-		}
+		}*/
 	}
 	/*RECUPERA O ITERADOR PARA O PRIMEIRO NO DA LISTA*/
 	public Iterador iterador(){
