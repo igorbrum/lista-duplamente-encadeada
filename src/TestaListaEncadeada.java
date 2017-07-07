@@ -15,12 +15,12 @@ public class TestaListaEncadeada {
 		System.out.println("===============================");
 		System.out.println("LISTA COM INSERT ANTES E DEPOIS");
 		
-		No iter = lista.getFirst();
+		Iterador iter = lista.iterador();
 		for (int i = 0; i < 3; i++) {
-			iter = iter.next();
+			iter.next();
 		}
-		iter.insertBefore(new No("Antes do 4"));
-		iter.insertAfter(new No("Depois do 4"));
+		iter.insertBefore("Antes do 4");
+		iter.insertAfter("Depois do 4");
 		imprime(lista);
 		
 		System.out.println("===============================");
@@ -28,24 +28,32 @@ public class TestaListaEncadeada {
 		
 		imprimeContrario(lista);
 		
-		System.out.println("===============================");
+		/*System.out.println("===============================");
 		System.out.println("LISTA COM DELETE");
 		
 		lista.remove("3");
-		imprime(lista);
+		imprime(lista);*/
 	}
 	private static void imprime(ListaEncadeada lista) {
-		No iter = lista.getFirst();
-		while (iter != null) {
-			System.out.println("Valor: "+iter.getData());
-			iter = iter.next();
+		try {
+			Iterador iter = lista.iterador();
+			while (iter.hasNext()) {
+				System.out.println(iter.next());
+			}
+			System.out.println(iter.next());
+		} catch (Exception e) {
+			System.out.println("OPS! Nenhum item adicionado na lista");
 		}
 	}
 	private static void imprimeContrario(ListaEncadeada lista){
-		No iter = lista.getLast();
-		while (iter != null) {
-			System.out.println("Valor: "+iter.getData());
-			iter = iter.previous();
+		try {
+			Iterador iter = lista.getLast();
+			while (iter.hasPrevious()) {
+				System.out.println(iter.previous());
+			}
+			System.out.println(iter.previous());
+		} catch (Exception e) {
+			System.out.println("OPS! Nenhum item adicionado na lista");
 		}
 	}
 }
