@@ -8,4 +8,5 @@ public interface Iterador {
 	// A partir daqui, é opcional!
 	boolean hasPrevious();
 	Object previous();
+	Object getActual();
 }

@@ -1,8 +1,5 @@
 
 public class ListaEncadeada {
-	private No head;
-	private No tail;
-	
 	private static class No {
 		private No next;
 		private No previous;
@@ -47,6 +44,11 @@ public class ListaEncadeada {
 				return this.noIterador.getData();
 			}
 		}
+		
+		@Override
+		public Object getActual(){
+			return this.noIterador.getData();
+		}
 
 		@Override
 		public void insertAfter(Object o) {
@@ -78,10 +80,12 @@ public class ListaEncadeada {
 			proximo = this.noIterador.next;
 			anterior = this.noIterador.previous;
 			
-			anterior.setNext(proximo);
-			proximo.setPrevious(anterior);
-			atual.setNext(null);
-			atual.setPrevious(null);
+			if (this.hasPrevious()) {
+				anterior.setNext(proximo);
+				proximo.setPrevious(anterior);
+				atual.setNext(null);
+				atual.setPrevious(null);
+			}
 		}
 
 		@Override
@@ -103,6 +107,10 @@ public class ListaEncadeada {
 		}
 		
 	}
+	
+	private No head;
+	private No tail;
+	
 	/*CONSTRUTOR*/
 	public ListaEncadeada(){
 		this.head = null;
@@ -136,9 +144,7 @@ public class ListaEncadeada {
 		if (this.hasObject(elemento)) {
 			Iterador iter = this.getFirst();
 			while (iter.hasNext()) {
-				Object compara = iter.next();
-				if (elemento == compara) {
-					iter.previous();
+				if (elemento.equals(iter.getActual())) {
 					iter.remove();
 				}
 				iter.next();
