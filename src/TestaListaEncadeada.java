@@ -28,11 +28,11 @@ public class TestaListaEncadeada {
 		
 		imprimeContrario(lista);
 		
-		/*System.out.println("===============================");
+		System.out.println("===============================");
 		System.out.println("LISTA COM DELETE");
 		
 		lista.remove("3");
-		imprime(lista);*/
+		imprime(lista);
 	}
 	private static void imprime(ListaEncadeada lista) {
 		try {

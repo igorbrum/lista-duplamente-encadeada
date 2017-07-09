@@ -73,7 +73,15 @@ public class ListaEncadeada {
 
 		@Override
 		public void remove() {
+			No proximo, anterior, atual;
+			atual = this.noIterador;
+			proximo = this.noIterador.next;
+			anterior = this.noIterador.previous;
 			
+			anterior.setNext(proximo);
+			proximo.setPrevious(anterior);
+			atual.setNext(null);
+			atual.setPrevious(null);
 		}
 
 		@Override
@@ -125,15 +133,17 @@ public class ListaEncadeada {
 	}
 	/*REMOVE O OBJETO DA LISTA*/
 	public void remove(Object elemento) {
-		//ERRO DE LOGICA
-		/*if (this.hasObject(elemento)) {
+		if (this.hasObject(elemento)) {
 			Iterador iter = this.getFirst();
 			while (iter.hasNext()) {
-				if (elemento != iter.next()) {
+				Object compara = iter.next();
+				if (elemento == compara) {
+					iter.previous();
 					iter.remove();
 				}
+				iter.next();
 			}
-		}*/
+		}
 	}
 	/*RECUPERA O ITERADOR PARA O PRIMEIRO NO DA LISTA*/
 	public Iterador iterador(){
