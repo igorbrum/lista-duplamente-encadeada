@@ -6,7 +6,6 @@ public class TestaListaEncadeada {
 		System.out.println("LISTA");
 		lista.append("2");
 		lista.append("3");
-		lista.append("3");
 		lista.append("4");
 		lista.append("5");
 		lista.append("6");
@@ -17,7 +16,7 @@ public class TestaListaEncadeada {
 		System.out.println("LISTA COM INSERT ANTES E DEPOIS");
 		
 		Iterador iter = lista.iterador();
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 3; i++) {
 			iter.next();
 		}
 		iter.insertBefore("Antes do 4");

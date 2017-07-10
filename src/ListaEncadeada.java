@@ -28,6 +28,7 @@ public class ListaEncadeada {
 		protected ListaIterador(No noIterador) {
 			this.noIterador = noIterador;
 		}
+
 		@Override
 		public boolean hasNext() {
 			if (this.noIterador.next != null) {
@@ -142,7 +143,7 @@ public class ListaEncadeada {
 	/*REMOVE O OBJETO DA LISTA*/
 	public void remove(Object elemento) {
 		if (this.hasObject(elemento)) {
-			Iterador iter = this.getFirst();
+			Iterador iter = this.iterador();
 			while (iter.hasNext()) {
 				if (elemento.equals(iter.getActual())) {
 					iter.remove();
